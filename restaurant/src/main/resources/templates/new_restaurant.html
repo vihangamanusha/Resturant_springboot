@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add New Restaurant</title>
+</head>
+<body>
+
+<h2>Add New Restaurant</h2>
+
+<form th:action="@{/save}" th:object="${restaurant}" method="post">
+
+
+    <td><input type="text" th:field="*{id}" /></td>
+    </tr>
+
+    <tr>
+        <td>Name</td>
+        <td><input type="text" th:field="*{name}" /></td>
+    </tr>
+
+    <tr>
+        <td>Location</td>
+        <td><input type="text" th:field="*{location}" /></td>
+    </tr>
+
+    <tr>
+        <td>Rating</td>
+        <td><input type="text" th:field="*{rating}" /></td>
+    </tr>
+
+    <tr>
+        <td>Cuisine</td>
+        <td><input type="text" th:field="*{cuising}" /></td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <button type="submit">Add Restaurant</button>
+        </td>
+    </tr>
+
+    </table>
+
+</form>
+
+<br>
+<a th:href="@{/}">Back to List</a>
+
+</body>
+</html>
