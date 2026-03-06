@@ -26,6 +26,11 @@ public class RestaurantController {
         model.addAttribute("restaurant", restaurant);
         return "edit";
     }
-
+    
+    @GetMapping("/new")
+    public String showNewForm(Model model){
+        model.addAttribute("restaurant", new Restaurant());
+        return "new_restaurant";
+    }
 
 }
