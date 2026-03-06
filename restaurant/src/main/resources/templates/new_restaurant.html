@@ -1,48 +1,104 @@
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Add New Restaurant</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+        }
+
+        h2{
+            text-align:center;
+            margin-top:30px;
+        }
+
+        table{
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:8px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        td{
+            padding:10px;
+        }
+
+        input{
+            padding:8px;
+            width:200px;
+            border:1px solid #ccc;
+            border-radius:4px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        a{
+            display:block;
+            text-align:center;
+            margin-top:20px;
+            text-decoration:none;
+            color:#007bff;
+        }
+    </style>
+
 </head>
+
 <body>
 
 <h2>Add New Restaurant</h2>
 
 <form th:action="@{/save}" th:object="${restaurant}" method="post">
 
+    <table>
 
-    <td><input type="text" th:field="*{id}" /></td>
-    </tr>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" th:field="*{id}" /></td>
+        </tr>
 
-    <tr>
-        <td>Name</td>
-        <td><input type="text" th:field="*{name}" /></td>
-    </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
 
-    <tr>
-        <td>Location</td>
-        <td><input type="text" th:field="*{location}" /></td>
-    </tr>
+        <tr>
+            <td>Location</td>
+            <td><input type="text" th:field="*{location}" /></td>
+        </tr>
 
-    <tr>
-        <td>Rating</td>
-        <td><input type="text" th:field="*{rating}" /></td>
-    </tr>
+        <tr>
+            <td>Rating</td>
+            <td><input type="text" th:field="*{rating}" /></td>
+        </tr>
 
-    <tr>
-        <td>Cuisine</td>
-        <td><input type="text" th:field="*{cuising}" /></td>
-    </tr>
+        <tr>
+            <td>Cuisine</td>
+            <td><input type="text" th:field="*{cuising}" /></td>
+        </tr>
 
-    <tr>
-        <td colspan="2">
-            <button type="submit">Add Restaurant</button>
-        </td>
-    </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button type="submit">Add Restaurant</button>
+            </td>
+        </tr>
 
     </table>
 
 </form>
 
-<br>
 <a th:href="@{/}">Back to List</a>
 
 </body>
